@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url("../images/grid.png");
+            transform: translateX(200px) translateY(200px);
+        }
+        .fa {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: relative;
+            transform-style: preserve-3d;
+            /* perspective: 300px; */
+            transform: rotateX(-33.5deg) rotateY(45deg) scaleZ(2);
+            
+            animation: loop 10s linear infinite;
+            
+        }
+
+        @keyframes loop {
+                0% {
+                    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+                }
+
+                100% {
+                    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)
+                }
+            }
+
+        .item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* transform: rotateX(30deg) rotateY(45deg); */
+            
+        }
+        .up {
+            background-color: rgb(83, 156, 220, .4);
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .down {
+            background-color: rgba(214, 135, 32, .4);
+            transform: rotateX(90deg) translateZ(-50px);
+        }
+        .left {
+            background-color: rgb(208, 77, 177, .4);
+            transform: translateZ(-50px);
+        }
+        .right {
+            background-color: rgb(88, 231, 183, .4);
+            transform: translateZ(50px);
+        }
+        .front {
+            background-color: rgb(242, 242, 136, .4);
+            transform: rotateY(90deg) translateZ(-50px);
+        }
+        .behind {
+            background-color: rgb(223, 38, 72, .4);
+            transform: rotateY(90deg) translateZ(50px);
+        }
+    </style>
+</head>
+<body>
+    <div class="fa">fa
+        <div class="item up">1</div>
+        <div class="item down">2</div>
+        <div class="item left">3</div>
+        <div class="item right">4</div>
+        <div class="item front">5</div>
+        <div class="item behind">6</div>
+    </div>
+</body>
+</html>
